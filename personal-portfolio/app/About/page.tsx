@@ -9,16 +9,7 @@ import javascript from '../../public/javascript-logo.svg';
 export default function page(){
   return (
     <div className='flex flex-col justify-between'>
-      <header className = "flex flex-col items-top p-4 bg-gray-800 text-white ml-4 mr-4 mt-4 rounded-xl border-2 border-gray-700">
-        <div className = "flex items-center justify-between">
-          <div className = "flex items-center gap-8">
-            <a href="#about" className="hover:text-gray-300 bg-gray-700 px-2 py-1 rounded">About Me</a>
-            <a href="#experiences" className="hover:text-gray-300">Experiences</a>
-            <Link href="/contact" className="hover:text-gray-300">Contact Me</Link>
-          </div>
-          <div className="w-8 h-8 bg-white rounded-full" aria-hidden="true" />
-        </div>
-      </header>
+
       <main className="flex items-left p-4 mt-10">
         <div className = "relative w-80 h-80 rounded-full ml-4 flex-shrink-0 mt-8 overflow-hidden" aria-hidden="true">
           <Image src={profile} alt="Profile" className="object-cover" fill />
@@ -29,25 +20,25 @@ export default function page(){
           <p className = "text-lg text-white-600">A passionate software developer</p>
           <p className = "text-lg text-white-600"> with great interest in building web applications and in learning new technologies.</p>
           <p className = "text-lg text-white-600">My Techstack:</p>
-          <div className="flex flex-col space-y-4 ml-4">
-            <div className="flex items-center gap-2 bg-gray-700 p-2 rounded w-70">
+          <div className="flex flex-wrap gap-3 space-y-4 ml-4">
+            <div className="flex items-center gap-2 bg-gray-700 dark:bg-gray-300 p-2 rounded h-10">
               <Image src={python} alt="Python logo" className="w-6 h-6" width={24} height={24} />
-              <span>Python</span>
+              <span className="dark:text-gray-900">Python</span>
             </div>
-            <div className="flex items-center gap-2 bg-gray-700 p-2 rounded w-70">
+            <div className="flex items-center gap-2 bg-gray-700 dark:bg-gray-300 p-2 rounded h-10">
               <Image src={react} alt="React logo" className="w-6 h-6" width={24} height={24} />
-              <span>React</span>
+              <span className="dark:text-gray-900">React</span>
             </div>
-            <div className="flex items-center gap-2 bg-gray-700 p-2 rounded w-70">
+            <div className="flex items-center gap-2 bg-gray-700 dark:bg-gray-300 p-2 rounded h-10">
               <Image src={typescript} alt="Typescript logo" className="w-6 h-6" width={24} height={24} />
               <Image src={javascript} alt="Javascript logo" className="w-6 h-6" width={24} height={24} />
-              <span>Javascript / Typescript</span>
+              <span className="dark:text-gray-900">Javascript / Typescript</span>
             </div>
           </div>
           <Link href="/contact">
-            <button className="w-50 ml-4 mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Hire Me</button>
+            <button className="w-70 ml-4 mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Hire Me</button>
           </Link>
-          <div className="flex items-center gap-6 ml-4 mt-4">
+          <div className="flex items-center gap-10 ml-17 mt-4">
             <a href="https://www.facebook.com/shin.thant.517084" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-600 hover:text-blue-800" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M22.675 0h-21.35C.596 0 0 .593 0 1.326v21.348C0 23.406.596 24 1.326 24h11.495v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.795.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.763v2.31h3.587l-.467 3.622h-3.12V24h6.116C23.404 24 24 23.406 24 22.674V1.326C24 .593 23.404 0 22.675 0z"/>
