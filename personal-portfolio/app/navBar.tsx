@@ -57,7 +57,7 @@ export default function NavBar() {
             <div className = "flex items-center justify-between">
                 <div className = "flex items-center gap-8">
                     <Link href="/" className={`hover:text-gray-200 ${pathname === '/' ? 'bg-gray-700 dark:bg-gray-300 px-2 py-1 rounded text-gray-900 dark:text-white' : ''}`}>About Me</Link>
-                    <Link href="/experiences" className={`hover:text-gray-200 ${pathname === '/experiences' ? 'bg-gray-700 dark:bg-gray-300 px-2 py-1 rounded text-gray-900 dark:text-white' : ''}`}>Experiences</Link>
+                    <Link href="/experience" className={`hover:text-gray-200 ${pathname === '/experience' ? 'bg-gray-700 dark:bg-gray-300 px-2 py-1 rounded text-gray-900 dark:text-white' : ''}`}>Experiences</Link>
                     <Link href="/contact" className={`hover:text-gray-200 ${pathname === '/contact' ? 'bg-gray-700 dark:bg-gray-300 px-2 py-1 rounded text-gray-900 dark:text-white' : ''}`}>Contact Me</Link>
                 </div>
                     <button onClick={toggleTheme} className = "w-10 h-10 bg-gray-500 rounded-full">
