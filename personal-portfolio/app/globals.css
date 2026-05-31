@@ -1,28 +1,122 @@
-* {
-  box-sizing: border-box;
+@import "tailwindcss";
+
+:root {
+  --quantum-surface: rgba(15, 23, 42, 0.45);
+  --quantum-border: rgba(255, 255, 255, 0.08);
+  --quantum-border-hover: rgba(52, 211, 153, 0.3);
+  --quantum-shadow: 0 28px 60px rgba(2, 6, 23, 0.55);
+  --quantum-glow: 0 0 40px rgba(52, 211, 153, 0.25), 0 0 90px rgba(34, 211, 238, 0.22);
+  --quantum-ease: cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-html,
-body {
-  margin: 0;
-  min-height: 100%;
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    min-height: 100%;
+  }
+
+  body {
+    font-family: var(--font-space-grotesk), "Manrope", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-fraunces), "DM Serif Display", serif;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
-body {
-  font-family: var(--font-space-grotesk), "Manrope", sans-serif;
+@layer components {
+  .quantum-card {
+    background: var(--quantum-surface);
+    border: 1px solid var(--quantum-border);
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.05), var(--quantum-shadow);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transform: translateY(0);
+    transition:
+      transform 360ms var(--quantum-ease),
+      border-color 360ms var(--quantum-ease),
+      box-shadow 360ms var(--quantum-ease);
+    will-change: transform, box-shadow, border-color;
+  }
+
+  .quantum-card:hover {
+    border-color: var(--quantum-border-hover);
+    box-shadow:
+      inset 1px 1px 2px rgba(255, 255, 255, 0.08),
+      var(--quantum-shadow),
+      var(--quantum-glow);
+    transform: translateY(-4px);
+  }
+
+  .quantum-input {
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    transition:
+      border-color 220ms var(--quantum-ease),
+      box-shadow 220ms var(--quantum-ease),
+      background-color 220ms var(--quantum-ease);
+  }
+
+  .quantum-input:focus {
+    outline: none;
+    box-shadow:
+      inset 0 0 0 1px rgba(34, 211, 238, 0.35),
+      0 0 18px rgba(34, 211, 238, 0.35);
+  }
+
+  .quantum-pill {
+    background: linear-gradient(110deg, rgba(16, 185, 129, 0.28), rgba(34, 211, 238, 0.32));
+    border: 1px solid rgba(52, 211, 153, 0.35);
+    box-shadow: 0 0 24px rgba(34, 211, 238, 0.25);
+    transition:
+      transform 240ms var(--quantum-ease),
+      box-shadow 240ms var(--quantum-ease),
+      border-color 240ms var(--quantum-ease);
+  }
+
+  .quantum-pill:hover {
+    border-color: rgba(34, 211, 238, 0.6);
+    box-shadow: 0 0 34px rgba(34, 211, 238, 0.4);
+    transform: translateY(-1px);
+  }
+
+  .quantum-pill:focus-visible {
+    outline: 2px solid rgba(34, 211, 238, 0.5);
+    outline-offset: 2px;
+  }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-fraunces), "DM Serif Display", serif;
+@layer utilities {
+  .animate-softPulse {
+    animation: softPulse 2.4s ease-in-out infinite;
+  }
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@keyframes softPulse {
+  0% {
+    box-shadow: 0 0 14px rgba(34, 211, 238, 0.18);
+  }
+  50% {
+    box-shadow: 0 0 34px rgba(34, 211, 238, 0.45);
+  }
+  100% {
+    box-shadow: 0 0 14px rgba(34, 211, 238, 0.18);
+  }
 }
+
 
