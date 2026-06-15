@@ -1,12 +1,7 @@
-"use client";
-
 import Image from "next/image";
+export const dynamic = "force-static";
 import Link from "next/link";
-import {
-  AlternateEmailRounded as AlternateEmailRoundedIcon,
-  FacebookRounded as FacebookRoundedIcon,
-  GitHub as GitHubIcon,
-} from "@mui/icons-material";
+import { HeroSocials } from "./components/IconsClient";
 import profile from "../public/profile.png";
 import python from "../public/Python-logo-notext.svg";
 import react from "../public/React-icon.svg";
@@ -198,33 +193,7 @@ export default function Page() {
               >
                 Contact Me
               </Link>
-              <div className="flex items-center gap-3">
-                <a
-                  href="https://www.facebook.com/shin.thant.517084"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Facebook"
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-cyan-100/80 transition duration-300 hover:border-emerald-300/40 hover:text-emerald-100"
-                >
-                  <FacebookRoundedIcon fontSize="small" />
-                </a>
-                <a
-                  href="https://github.com/ShinThantNaung"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub"
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-100/80 transition duration-300 hover:border-emerald-300/40 hover:text-emerald-100"
-                >
-                  <GitHubIcon fontSize="small" />
-                </a>
-                <a
-                  href="mailto:shinthantnaung112@gmail.com"
-                  aria-label="Email"
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-rose-200/80 transition duration-300 hover:border-emerald-300/40 hover:text-emerald-100"
-                >
-                  <AlternateEmailRoundedIcon fontSize="small" />
-                </a>
-              </div>
+              <HeroSocials />
             </div>
           </div>
         </div>

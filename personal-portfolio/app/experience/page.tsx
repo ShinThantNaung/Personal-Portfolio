@@ -1,6 +1,5 @@
-"use client";
-
 import Image from "next/image";
+export const dynamic = "force-static";
 import capoo from "../../public/capoo-crying.webp";
 
 const ExperiencePage = () => {
