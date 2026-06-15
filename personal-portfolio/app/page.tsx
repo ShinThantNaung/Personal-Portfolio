@@ -7,7 +7,7 @@ import {
   FacebookRounded as FacebookRoundedIcon,
   GitHub as GitHubIcon,
 } from "@mui/icons-material";
-import profile from "../public/profile.jpg";
+import profile from "../public/profile.png";
 import python from "../public/Python-logo-notext.svg";
 import react from "../public/React-icon.svg";
 import typescript from "../public/typescript-logo.svg";
