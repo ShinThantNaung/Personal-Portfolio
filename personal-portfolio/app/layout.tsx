@@ -1,21 +1,22 @@
-import type { Metadata } from 'next';
-import type { ReactNode } from 'react';
-import { Fraunces, Space_Grotesk } from 'next/font/google';
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
-import './globals.css';
-import NavBar from './navBar';
-import PortfolioThemeProvider from './themeProvider';
+import type { Metadata } from "next";
+import type { ReactNode } from "react";
+import { Fraunces, Space_Grotesk } from "next/font/google";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
+import "./globals.css";
+import Footer from "./footer";
+import NavBar from "./navBar";
+import PortfolioThemeProvider from "./themeProvider";
 
 const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  variable: '--font-space-grotesk',
-  weight: ['400', '500', '700'],
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+  weight: ["400", "500", "700"],
 });
 
 const fraunces = Fraunces({
-  subsets: ['latin'],
-  variable: '--font-fraunces',
-  weight: ['500', '700'],
+  subsets: ["latin"],
+  variable: "--font-fraunces",
+  weight: ["500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -33,11 +34,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: ReactNode
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className={`${spaceGrotesk.variable} ${fraunces.variable}`}>
@@ -45,9 +42,10 @@ export default function RootLayout({
           <PortfolioThemeProvider>
             <NavBar />
             {children}
+            <Footer />
           </PortfolioThemeProvider>
         </AppRouterCacheProvider>
       </body>
     </html>
-  )
+  );
 }

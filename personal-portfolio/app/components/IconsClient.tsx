@@ -41,6 +41,47 @@ export function HeroSocials() {
   );
 }
 
+export function FooterSocials() {
+  const socialLinks = [
+    {
+      label: "Telegram",
+      href: "https://t.me/Lord_Thant",
+      icon: <TelegramIcon fontSize="small" />,
+    },
+    {
+      label: "GitHub",
+      href: "https://github.com/ShinThantNaung",
+      icon: <GitHubIcon fontSize="small" />,
+    },
+    {
+      label: "Facebook",
+      href: "https://www.facebook.com/shin.thant.517084",
+      icon: <FacebookRoundedIcon fontSize="small" />,
+    },
+  ];
+
+  return (
+    <nav
+      aria-label="Social links"
+      className="mt-5 flex flex-wrap gap-x-5 gap-y-2 md:justify-end"
+    >
+      {socialLinks.map((link) => (
+        <a
+          key={link.label}
+          href={link.href}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={link.label}
+          title={link.label}
+          className="footer-link inline-flex h-10 w-10 items-center justify-center rounded-full border border-current/20 text-sm transition hover:border-emerald-400 hover:text-emerald-400"
+        >
+          {link.icon}
+        </a>
+      ))}
+    </nav>
+  );
+}
+
 export function ContactSocials() {
   return (
     <div className="mt-8 space-y-3">
